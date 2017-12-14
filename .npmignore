@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+example
+build
+test
+docs
+src

@@ -1,0 +1,92 @@
+.dl-button {
+  outline: none;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  color: #737373;
+  border: 1px solid #c6c6c6;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  transition: all .2s cubic-bezier(.645,.045,.355,1);
+  span, i{
+    cursor: pointer;
+  }
+  &-large {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  &-small {
+    font-size: 12px;
+    padding: 4px;
+  }
+  &-dashed {
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+    border-style: dashed;
+  }
+  &-default, &-dashed {
+    &:hover, &:focus {
+      color: #108ee9;
+      background-color: #fff;
+      border-color: #108ee9;
+    }
+  }
+  &-success {
+    color: #fff;
+    background-color: #13ce66;
+    border-color: #13ce66;
+  }
+  &-warning {
+    color: #fff;
+    background-color: #f7ba2a;
+    border-color: #f7ba2a;
+  }
+  &-danger {
+    color: #fff;
+    background-color: #ff4949;
+    border-color: #ff4949;
+  }
+  &-info {
+    color: #fff;
+    background-color: #49a9ee;
+    border-color: #49a9ee;
+    &:hover {
+      // display: block
+    }
+  }
+  &-text {
+    border: none;
+    color: #00a6ff;
+    background: 0 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  [class*=dl-icon-]+span {
+    margin-left: 4px;
+  }
+}
+.dl-button+.dl-button {
+  margin-left: 8px;
+}
+.is-disabled {
+  background-color: #fff;
+  border-color: #d1dbe5;
+  color: #bfcbd9;
+  cursor: not-allowed;
+  background-image: none;
+  span, i {
+    cursor: not-allowed;
+  }
+}
+.dl-button.is-disabled {
+  &:hover, &:focus {
+    background-color: #fff;
+    border-color: #d1dbe5;
+    color: #bfcbd9;
+  }
+}
