@@ -1,10 +1,12 @@
 import Home from './home/index.js'
 import Button from './button/index.js'
+import Color from './color/index.js'
 
 export default {
   components: {
     Home,
-    Button
+    Button,
+    Color
   },
   Nav: {
     'General': {

@@ -11,11 +11,12 @@ import {
 import Pages from './pages/index.js'
 import './assets/styles/base.scss'
 
-const { Home, Button, } = Pages.components
+const { Home, Button, Color} = Pages.components
 
 const routes = [
   { path: '/', component: Home, exact: true },
   { path: '/button', component: Button },
+  { path: '/color', component: Color },
 ]
 
 const App = (props, context) =>

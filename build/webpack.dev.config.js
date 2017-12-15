@@ -10,6 +10,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../docs'),
+    filename: '[name].js'
   },
   module: {
     strictExportPresence: true,
@@ -81,7 +82,6 @@ module.exports = {
   devServer: {
     port: 9000,
     hot: true,
-    //iframe: true,
     compress: true,
     disableHostCheck: true,
     stats: { colors: true }
