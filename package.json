@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/yi-cli/design-react/issues"
   },
-  "homepage": "https://yi-cli.github.io/design-react/",
+  "homepage": "https://yyhappynice.github.io/design-react/",
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
