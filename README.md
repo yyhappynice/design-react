@@ -1,1 +1,3 @@
-# [design-react](https://yyhappynice.github.io/design-react/#/)
+# design-react
+
+### Go to ➡ [Document](https://yyhappynice.github.io/design-react/#/)
