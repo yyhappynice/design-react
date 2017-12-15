@@ -25,7 +25,7 @@ const App = (props, context) =>
     <div className="app">
       <header className="header">
         <div className="container">
-          <h1>Design-React</h1>
+          <h1 className="logo">Design-React</h1>
           <ul className="nav">
             <li>指南</li>
             <li>组件</li>
