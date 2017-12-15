@@ -5,3 +5,11 @@ build
 test
 docs
 src
+.DS_Store
+*.swp
+npm-debug.log
+.travis.yml
+yarn.lock
+.eslintrc
+.editorconfig
+.gitignore

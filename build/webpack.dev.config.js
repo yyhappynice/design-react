@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -11,6 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, '../docs'),
   },
   module: {
+    strictExportPresence: true,
     rules: [
       {
         test: /\.(js|jsx)$/,
@@ -25,7 +27,12 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        use: 'babel-loader',
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
+        }],
         exclude: /(node_modules)/
       },
       {
@@ -69,7 +76,7 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.scss']
+    extensions: ['.js', '.jsx', '.scss', '.json']
   },
   devServer: {
     port: 9000,
