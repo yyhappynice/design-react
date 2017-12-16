@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CompressionPlugin = require("compression-webpack-plugin")
 
 module.exports = {
   devtool: 'source-map',
@@ -70,6 +71,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CompressionPlugin({
+      test: /\.ttf$/
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './example/index.html',
