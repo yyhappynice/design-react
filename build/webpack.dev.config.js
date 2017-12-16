@@ -7,7 +7,8 @@ const CompressionPlugin = require("compression-webpack-plugin")
 module.exports = {
   devtool: 'source-map',
   entry: {
-    main: './example/index.js'
+    main: './example/index.js',
+    vendor: ['react', 'react-dom', 'react-router-dom', 'classnames', 'marked', 'prismjs']
   },
   output: {
     path: path.resolve(__dirname, '../docs'),
@@ -71,14 +72,15 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js', minChunks: Infinity }),
     new CompressionPlugin({
-      test: /\.ttf$/
+      test: /\.(ttf|js|html)$/
     }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './example/index.html',
       filename: 'index.html',
-    })
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.scss', '.json']
@@ -90,4 +92,22 @@ module.exports = {
     disableHostCheck: true,
     stats: { colors: true }
   }
+}
+
+if(process.env.NODE_ENV === 'production') {
+  module.exports.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      // 最紧凑的输出
+      beautify: false,
+      // 删除所有的注释
+      comments: false,
+      compress: {
+        //supresses warnings, usually from module minification
+        warnings: false,
+        // 删除所有的 `console` 语句
+        // 还可以兼容ie浏览器
+        drop_console: true,
+      }
+    })
+  )
 }
